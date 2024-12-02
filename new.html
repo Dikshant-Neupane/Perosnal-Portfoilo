@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="navbar">
+        <button id="mode-toggle">🌞 Light Mode</button>
+        <nav>
+            <ul>
+                <li><a href="#portfolio">My Portfolio</a></li> 
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#social">Social</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Profile Card Section -->
+    <main class="profile-container">
+        <div class="profile-card">
+            <div class="profile-content">
+                <div class="profile-text">
+                    <h3>Hi everyone,</h3> 
+                    <p>I am दिक्षान्त न्यौपाने, a </p>
+                    <p><span class="typing-text">learner</span></p>
+                </div>
+                <div class="profile-image">
+                    <img src="profile-pic.png" alt="Profile Picture of Dikshant Neupane">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h1>My Skills</h1>
+        <div class="skills-container">
+            <div class="skill-box">
+                <div class="icon">&#9200;</div>
+                <h3>Web Design</h3>
+                <p>Basic.</p>
+            </div>
+            <div class="skill-box">
+                <div class="icon">&#128187;</div>
+                <h3>Data Analysis</h3>
+                <p>Learning</p>
+            </div>
+            <div class="skill-box">
+                <div class="icon">&#128274;</div>
+                <h3>Digital Marketing</h3>
+                <p>Learning.</p>
+            </div>
+            <div class="skill-box">
+                <div class="icon">&#128187;</div>
+                <h3>HTML & CSS</h3>
+                <p>Structuring and styling websites with modern techniques.</p>
+            </div>
+            <div class="skill-box">
+                <div class="icon">&#128187;</div>
+                <h3>Python</h3>
+                <p>Learning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section id="social">
+        <h1>Connect with Me</h1>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/dikshant.neupane.5" target="_blank" class="social-icon" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/dikshant-neupane-a64b09326/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-form">
+            <h1>Contact Me</h1>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" cols="30" rows="10" placeholder="Enter your message" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn" type="submit">Send Message</button>
+                </div>
+            </form>
+            <p>You can also reach me at: <a href="mailto:dikshantneupane690@gmail.com">dikshantneupane690@gmail.com</a></p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Dikshant Neupane</p>
+    </footer>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script src="script.js"></script>
+</body>
+</html>

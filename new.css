@@ -1,0 +1,518 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #d8c8ff, #f3e1ff);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    background-color: rgba(74, 46, 165, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.navbar a {
+    color: #037a70;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f5c92d;
+}
+
+/* Profile Container and Card Styling */
+.profile-container {
+    position: relative; /* Allows absolute positioning of the overlay */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the card vertically */
+    padding: 20px;
+}
+
+.profile-card {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    max-width: 800px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 60px;
+    position: relative; /* For layering */
+    z-index: 1; /* Ensure it sits above the overlay */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 249, 249, 0.922); /* Dark overlay */
+    z-index: 0; /* Sit below the card */
+}
+
+/* Hover Effect */
+.profile-card:hover {
+    transform: translateY(-5px); /* Slight lift */
+    box-shadow: 0 0 20px rgba(255, 200, 50, 0.8); /* Glowing effect */
+}
+
+/* Profile Content */
+.profile-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-text {
+    max-width: 50%;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.profile-text h3 {
+    margin-bottom: 10px;
+}
+
+.profile-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    object-fit: cover;
+}
+
+/* Typing and Fading Effect */
+.typing-text {
+    color: #4a2ea5;
+    font-weight: bold;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid;
+    animation: typing 4s steps(12) infinite, blink-caret 1s step-end infinite;
+}
+
+@keyframes typing {
+    0%, 50% {
+        width: 0;
+    }
+    10%, 40% {
+        width: 7ch;
+    }
+    60%, 100% {
+        width: 10ch;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Skills Section */
+#skills {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack elements */
+    align-items: center; /* Center align the title */
+    padding: 60px 20px;
+    background-color: #5c3dc6;
+    color: white;
+}
+
+#skills h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin-top: 20px; /* Space below title */
+}
+
+.skill-box {
+    background-color: #4a2ea5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.skill-box i {
+    font-size: 3rem;
+    color: #f5c92d;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.skill-box:hover i {
+    transform: scale(1.1);
+}
+
+.skill-box h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #f5c92d; /* Change heading color for contrast */
+}
+
+.skill-box p {
+    font-size: 1.1rem;
+    color: #f3e1ff;
+}
+
+/* Social Media Section */
+#social {
+    width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #4a2ea5;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #f5c92d;
+}
+
+/* Contact Section */
+#contact {
+    width: 100%;
+    background-color: #5c3dc6;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    background-color: #d8c8ff;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}/* Email Link Styling in Both Light and Dark Modes */
+.contact-form a {
+    color: #ff4d4d; /* Bright red color for email link */
+    text-decoration: none; /* Optional: remove underline for cleaner look */
+    font-weight: bold; /* Make it stand out more */
+}
+
+.contact-form a:hover {
+    color: #ff6666; /* Slightly lighter red on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        padding: 20px;
+        width: 90%;
+    }
+
+    .profile-text, .profile-image {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .profile-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    #skills h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #4a2ea5;
+    color: white;
+    text-align: center;
+}
+/* Color Variables */
+:root {
+    --background-light: linear-gradient(135deg, #d8c8ff, #f3e1ff);
+    --background-dark: #1c1c1c;
+    --text-light: #333;
+    --text-dark: #f0f0f0;
+    --primary-light: #4a2ea5;
+    --primary-dark: #f5c92d;
+    --overlay-light: rgba(255, 249, 249, 0.922);
+    --overlay-dark: rgba(30, 30, 30, 0.9);
+}
+
+body {
+    background: var(--background-light);
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background: var(--background-dark);
+    color: var(--text-dark);
+}
+
+/* Dark Mode Toggle Button */
+#mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: var(--primary-light);
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.dark-mode #mode-toggle {
+    background-color: var(--primary-dark);
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    background-color: rgba(74, 46, 165, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .navbar {
+    background-color: rgba(245, 201, 45, 0.8);
+}
+
+.navbar a {
+    color: var(--text-light);
+}
+
+.dark-mode .navbar a {
+    color: var(--text-dark);
+}
+
+/* Profile Card */
+.profile-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 60px;
+}
+
+.dark-mode .profile-card {
+    background-color: rgba(32, 32, 32, 0.9);
+}
+
+/* Overlay */
+.overlay {
+    background-color: var(--overlay-light);
+}
+
+.dark-mode .overlay {
+    background-color: var(--overlay-dark);
+}
+
+/* Skills Section */
+#skills {
+    background-color: #5c3dc6;
+}
+
+.dark-mode #skills {
+    background-color: var(--primary-dark);
+}
+
+.skill-box {
+    background-color: var(--primary-light);
+}
+
+.dark-mode .skill-box {
+    background-color: var(--primary-dark);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-light);
+    color: white;
+}
+
+.dark-mode footer {
+    background-color: var(--primary-dark);
+    color: var(--text-dark);
+}
+/* Dark Mode Background and Text */
+.dark-mode {
+    background: #121212; /* Dark background */
+    color: #e0e0e0; /* Light gray text for readability */
+}
+
+/* Dark Mode Navbar */
+.dark-mode .navbar {
+    background-color: rgba(30, 30, 30, 0.9); /* Deep gray with opacity for navbar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); /* Soft shadow for depth */
+}
+
+.dark-mode .navbar a {
+    color: #f0a500; /* Warm yellow-gold accent for links */
+}
+
+.dark-mode .navbar a:hover {
+    color: #ffa726; /* Slightly lighter hover color */
+}
+
+/* Dark Mode Profile Card */
+/* Dark Mode Profile Card */
+.dark-mode .profile-card {
+    background-color: #1e1e1e; /* Darker gray for profile card */
+    color: #f5f5f5; /* Soft, light color for primary text */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Enhanced shadow for depth */
+}
+
+.dark-mode .profile-card h3 {
+    color: #f8f8f2; /* Slightly brighter off-white for headings */
+}
+
+.dark-mode .profile-card p,
+.dark-mode .profile-card .typing-text {
+    color: #e0e0e0; /* Warm light gray for paragraph text */
+}
+
+.dark-mode .profile-card:hover {
+    box-shadow: 0 0 20px #f0a500; /* Golden glow on hover */
+}
+
+
+/* Dark Mode Overlay */
+.dark-mode .overlay {
+    background-color: rgba(20, 20, 20, 0.85); /* Dark, semi-transparent overlay */
+}
+
+/* Dark Mode Skills Section */
+.dark-mode #skills {
+    background-color: #292929; /* Very dark gray */
+    color: #f3e5ab; /* Warm, muted yellow text for headings */
+}
+
+.dark-mode .skill-box {
+    background-color: #333; /* Darker background for skill box */
+    color: #f3e5ab; /* Matching muted yellow */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Softer shadow for skill boxes */
+}
+
+.dark-mode .skill-box h3 {
+    color: #ffa726; /* Brighter accent color for skill titles */
+}
+
+/* Dark Mode Social Media Icons */
+.dark-mode .social-icons a {
+    color: #f0a500; /* Gold color for social icons */
+}
+
+.dark-mode .social-icons a:hover {
+    color: #ffa726; /* Lighter accent on hover */
+}
+
+/* Dark Mode Contact Section */
+.dark-mode #contact {
+    background-color: #222; /* Very dark gray background */
+    color: #e0e0e0; /* Light gray text */
+}
+
+.dark-mode .contact-form {
+    background-color: #333; /* Dark form background */
+    color: #e8e8e8; /* Light text in form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Subtle shadow */
+}
+
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+    background-color: #444; /* Dark input background */
+    color: #e0e0e0; /* Light text color */
+    border: 1px solid #555; /* Border for inputs */
+}
+
+.dark-mode .contact-form input::placeholder,
+.dark-mode .contact-form textarea::placeholder {
+    color: #a0a0a0; /* Light gray placeholder text */
+}
+
+/* Dark Mode Footer */
+.dark-mode footer {
+    background-color: #292929; /* Footer background color */
+    color: #e0e0e0; /* Light gray text */
+    border-top: 1px solid #444; /* Border for separation */
+}
